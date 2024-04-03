@@ -8,8 +8,9 @@ public class AnaSinif {
 		Deneme d=new Deneme();
 		d.dosyaolustur();
 		d.dosyaOku();
-		d.dizeEkle();
-		d.diziYazdýr();
+                d.dizeEkle();
+                //d.diziYazdir();
+		
 		
 		
 		
