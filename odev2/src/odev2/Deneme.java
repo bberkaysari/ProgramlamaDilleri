@@ -14,6 +14,7 @@ public class Deneme {
     String dosyayolu;
     int dizi[];
     int asıldizi[];
+    int adres[];
 
     public void dosyaolustur() throws IOException {
         Scanner scanner = new Scanner(System.in);
@@ -48,19 +49,44 @@ public class Deneme {
     }
 
     public void dizeEkle() {
-        asıldizi = new int[b];
-        for (int i = 0; i < b; i++) {
-            asıldizi[i] = i;
-            System.out.println("Sayı:" + dizi[i] + " Adres: " + asıldizi[i]);
-        }
+        adres=new int[b];
+        System.out.println("İlk Hali: "+"                                " + "Son Hali:");
+		int indeks=0;
+		asıldizi=new int[b];
+		for(int c=0;c<b;c++) {
+			adres[c]=-1;
+		}
+		for(int i=0;i<b;i++) {
+			x=dizi[i];
+			y=0;
+			for(int j=0;j<b;j++) {
+				if(j==i) {
+					continue;
+				}
+				if(dizi[i]>dizi[j]) {
+					y++;
+				}
+			}
+			for(int a=0;a<b;a++) {
+				if(adres[a]==y) {
+					y++;
+				}
+			}
+			adres[indeks]=y;
+			indeks++;
+			asıldizi[y]=x;
+			
+                        System.out.print("Sayı:" + dizi[i] +"---->"+ " Adres: " + i+"                     ");
+                        System.out.println("Sayı:"+x+"---->"+"Adres:"+y);
+                        
+                        
+		}
+                
     }
-
     public void diziYazdir() {
-        Arrays.sort(dizi);
-        Arrays.sort(asıldizi);
         System.out.println("Sıralanmış Hali: ");
         for (int i = 0; i < b; i++) {
-            System.out.println("Sayı:" + dizi[i] + " Adres: " + asıldizi[i]);
+            System.out.println("Sayı:" + asıldizi[i] + " Adres: " + i);
         }
     }
 
