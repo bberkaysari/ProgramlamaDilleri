@@ -56,20 +56,12 @@ public class Deneme {
     }
 
     public void diziYazdir() {
-        
+        Arrays.sort(dizi);
         Arrays.sort(asıldizi);
-        System.out.println("\n");
         System.out.println("Sıralanmış Hali: ");
         for (int i = 0; i < b; i++) {
             System.out.println("Sayı:" + dizi[i] + " Adres: " + asıldizi[i]);
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        Deneme deneme = new Deneme();
-        deneme.dosyaolustur();
-        deneme.dosyaOku();
-        deneme.dizeEkle();
-        deneme.diziYazdir();
-    }
 }
